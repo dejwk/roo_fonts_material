@@ -1,0 +1,15 @@
+name: CI setup
+
+description: Common CI setup steps for Bazel builds.
+
+runs:
+  using: composite
+  steps:
+    - uses: bazel-contrib/setup-bazel@0.15.0
+      with:
+        # Avoid downloading Bazel every time.
+        bazelisk-cache: true
+        # Store build cache per job to avoid concurrent writes.
+        disk-cache: ${{ github.workflow }}-${{ github.job }}
+        # Share repository cache between workflows.
+        repository-cache: true

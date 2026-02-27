@@ -1,0 +1,33 @@
+{
+    "name": "roo_fonts_material",
+    "description": "Collection of Material Design fonts for use with dejwk/roo_display (http://github.com/dejwk/roo_display).",
+    "keywords": [
+        "display"
+    ],
+    "authors": [
+        {
+            "name": "Dawid Kurzyniec",
+            "email": "dejwk.oss@gmail.com",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dejwk/roo_fonts_material"
+    },
+    "version": "1.0.0",
+    "homepage": "https://github.com/dejwk/roo_fonts_material",
+    "frameworks": [
+        "*"
+    ],
+    "build": {
+        "srcDir": "src",
+        "srcFilter": "+<*> -<examples> -<benchmarks> -<doc> -<test>"
+    },
+    "examples": [
+        "examples/**/*.ino"
+    ],
+    "dependencies": {
+        "dejwk/roo_display": ">=3.0.2"
+    }
+}
