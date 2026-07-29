@@ -1,7 +1,29 @@
+#include "roo_display/font/font.h"
+
 #include "gtest/gtest.h"
 #include "roo_display.h"
-#include "roo_display/font/font.h"
+#include "roo_fonts/NotoSans_Medium/10_5.h"
+#include "roo_fonts/NotoSans_Medium/12.h"
+#include "roo_fonts/NotoSans_Medium/16.h"
+#include "roo_fonts/NotoSans_Medium/16_5.h"
+#include "roo_fonts/NotoSans_Medium/18.h"
+#include "roo_fonts/NotoSans_Medium/22.h"
+#include "roo_fonts/NotoSans_Medium/24.h"
+#include "roo_fonts/NotoSans_Medium/32.h"
+#include "roo_fonts/NotoSans_Medium/8_25.h"
+#include "roo_fonts/NotoSans_Medium/9.h"
+#include "roo_fonts/NotoSans_Regular/10_5.h"
+#include "roo_fonts/NotoSans_Regular/114.h"
 #include "roo_fonts/NotoSans_Regular/14.h"
+#include "roo_fonts/NotoSans_Regular/16_5.h"
+#include "roo_fonts/NotoSans_Regular/22.h"
+#include "roo_fonts/NotoSans_Regular/33.h"
+#include "roo_fonts/NotoSans_Regular/42.h"
+#include "roo_fonts/NotoSans_Regular/44.h"
+#include "roo_fonts/NotoSans_Regular/54.h"
+#include "roo_fonts/NotoSans_Regular/56.h"
+#include "roo_fonts/NotoSans_Regular/64.h"
+#include "roo_fonts/NotoSans_Regular/86.h"
 #include "testing_drawable.h"
 
 namespace roo_display {
@@ -35,6 +57,35 @@ TEST(FontTest, NotoSansRegular14Metrics) {
   EXPECT_EQ(15, font().metrics().glyphYMax());
   EXPECT_EQ(19, font().metrics().maxWidth());
   EXPECT_EQ(19, font().metrics().maxHeight());
+}
+
+TEST(FontTest, Material3CatalogAccessorsAndMetrics) {
+  const Font* const fonts[] = {
+      &font_NotoSans_Regular_10_5(), &font_NotoSans_Regular_16_5(),
+      &font_NotoSans_Regular_22(),   &font_NotoSans_Regular_33(),
+      &font_NotoSans_Regular_42(),   &font_NotoSans_Regular_44(),
+      &font_NotoSans_Regular_54(),   &font_NotoSans_Regular_56(),
+      &font_NotoSans_Regular_64(),   &font_NotoSans_Regular_86(),
+      &font_NotoSans_Regular_114(),  &font_NotoSans_Medium_8_25(),
+      &font_NotoSans_Medium_9(),     &font_NotoSans_Medium_10_5(),
+      &font_NotoSans_Medium_12(),    &font_NotoSans_Medium_16(),
+      &font_NotoSans_Medium_16_5(),  &font_NotoSans_Medium_18(),
+      &font_NotoSans_Medium_22(),    &font_NotoSans_Medium_24(),
+      &font_NotoSans_Medium_32(),
+  };
+
+  for (const Font* font : fonts) {
+    ASSERT_NE(nullptr, font);
+    const auto& metrics = font->metrics();
+    EXPECT_GT(metrics.linespace(), 0);
+    EXPECT_GT(metrics.ascent(), 0);
+    EXPECT_LT(metrics.descent(), 0);
+    EXPECT_GE(metrics.linegap(), 0);
+    EXPECT_GT(metrics.maxWidth(), 0);
+    EXPECT_GT(metrics.maxHeight(), 0);
+    EXPECT_EQ(metrics.linespace(),
+              metrics.ascent() - metrics.descent() + metrics.linegap());
+  }
 }
 
 TEST(FontTest, NotoSansRegular14GoldenText) {

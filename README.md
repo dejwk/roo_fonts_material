@@ -3,9 +3,9 @@ UIs with [Material Design](https://m3.material.io/blog/design-material-theme-typ
 
 Contains the following fonts from the NotoSans family:
 
-*  Regular: 9, 11, 14, 16, 20, 21, 24, 26, 28, 32, 34, 36, 48, 51, 68, 72, 96
+*  Regular: 9, 10.5, 11, 14, 16, 16.5, 20, 21, 22, 24, 26, 28, 32, 33, 34, 36, 42, 44, 48, 51, 54, 56, 64, 68, 72, 86, 96, 114
 *  Light: 45, 60, 72, 90, 96, 120, 144, 192
-*  Medium: 11, 14, 15, 20, 21, 28, 30, 40
+*  Medium: 8.25, 9, 10.5, 11, 12, 14, 15, 16, 16.5, 18, 20, 21, 22, 24, 28, 30, 32, 40
 
 All fonts are also provided in the 'condensed' variant.
 
@@ -84,3 +84,14 @@ Suggested zoom selection per DPI level:
 
 *) Sizes marked with * are not included in this library. For Regular, use
 	the roo_display builtin fonts; for Condensed, use [roo_fonts_basic](http://github.com/dejwk/roo_fonts_basic).
+
+## Material 3 precise catalog additions
+
+The Material 3 typography catalog adds 21 Noto Sans Regular and Medium
+rasters. Fractional nominal sizes are rasterized directly; their generated
+file and accessor names use an underscore (for example, `10_5.h` and
+`font_NotoSans_Regular_10_5()`). Each size remains in a separate translation
+unit, so unused font payloads can be discarded by the linker.
+
+The additions contain 7,422,156 bytes of generated C++ and header source and
+1,067,448 bytes of encoded font arrays.
