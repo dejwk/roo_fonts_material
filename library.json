@@ -15,7 +15,7 @@
         "type": "git",
         "url": "https://github.com/dejwk/roo_fonts_material"
     },
-    "version": "1.0.0",
+    "version": "1.1.0",
     "homepage": "https://github.com/dejwk/roo_fonts_material",
     "frameworks": [
         "*"
@@ -28,6 +28,6 @@
         "examples/**/*.ino"
     ],
     "dependencies": {
-        "dejwk/roo_display": ">=3.0.2"
+        "dejwk/roo_display": ">=3.2.0"
     }
 }
