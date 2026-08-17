@@ -95,3 +95,14 @@ unit, so unused font payloads can be discarded by the linker.
 
 The additions contain 7,422,156 bytes of generated C++ and header source and
 1,067,448 bytes of encoded font arrays.
+
+## Host emulation
+
+Host builds use the roo_testing 2.0 Arduino ESP32 profile. With Bazelisk 1.21
+or newer, a plain command defaults to that profile and prints a notice:
+
+    bazel test ...
+    bazel test ... --config=roo_testing_arduino_esp32
+
+The files under .roo_testing/bazelrc/esp32 are vendored from roo_testing;
+follow their canonical-source headers when refreshing them.
