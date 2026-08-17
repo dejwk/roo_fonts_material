@@ -106,3 +106,7 @@ or newer, a plain command defaults to that profile and prints a notice:
 
 The files under .roo_testing/bazelrc/esp32 are vendored from roo_testing;
 follow their canonical-source headers when refreshing them.
+
+Run the interactive Material font catalog under the emulator with:
+
+    bazel run //examples/fonts:fonts
