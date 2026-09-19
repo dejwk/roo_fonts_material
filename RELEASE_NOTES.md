@@ -1,3 +1,11 @@
+# roo_fonts_material 1.1.2
+
+- Upgrade `roo_display` to 3.3.0 in Bazel and raise the PlatformIO minimum requirement to 3.3.0.
+- Upgrade Bazel’s `rules_cc` to 0.2.25 and `roo_testing` to 2.1.2; update CI to use `roo_testing` 2.1.2.
+- Add consolidated release notes for previous releases.
+
+---
+
 # [roo_fonts_material 1.1.1](https://github.com/dejwk/roo_fonts_material/releases/tag/1.1.1)
 
 Published 2026-08-30.
