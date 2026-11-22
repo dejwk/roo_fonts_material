@@ -1,5 +1,6 @@
 #include "20.h"
 #include <inttypes.h>
+#include "roo_display.h"
 #include "roo_display/hal/progmem.h"
 #include "roo_display/font/smooth_font_v2.h"
 

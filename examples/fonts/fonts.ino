@@ -36,6 +36,7 @@ struct Emulator {
 
 #endif
 
+#include "roo_backport.h"
 #include "roo_backport/string_view.h"
 #include "roo_display.h"
 #include "roo_display/ui/text_label.h"
