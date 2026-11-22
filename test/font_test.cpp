@@ -1,7 +1,7 @@
+#include "roo_display.h"
 #include "roo_display/font/font.h"
 
 #include "gtest/gtest.h"
-#include "roo_display.h"
 #include "roo_fonts/NotoSans_Medium/10_5.h"
 #include "roo_fonts/NotoSans_Medium/12.h"
 #include "roo_fonts/NotoSans_Medium/16.h"
